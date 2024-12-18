@@ -1,0 +1,106 @@
+2024-12-18 10:52:26,842:INFO:base.py:SELECT DATABASE()
+2024-12-18 10:52:26,843:INFO:base.py:[raw sql] {}
+2024-12-18 10:52:26,843:INFO:base.py:SELECT @@sql_mode
+2024-12-18 10:52:26,844:INFO:base.py:[raw sql] {}
+2024-12-18 10:52:26,844:INFO:base.py:SELECT @@lower_case_table_names
+2024-12-18 10:52:26,844:INFO:base.py:[raw sql] {}
+2024-12-18 10:52:26,850:INFO:base.py:BEGIN (implicit)
+2024-12-18 10:52:26,851:INFO:base.py:SHOW CREATE TABLE `compare_table`
+2024-12-18 10:52:26,851:INFO:base.py:[raw sql] {}
+2024-12-18 10:52:26,858:INFO:base.py:ROLLBACK
+2024-12-18 10:52:26,866:INFO:_internal.py:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-18 10:52:26,867:INFO:_internal.py:[33mPress CTRL+C to quit[0m
+2024-12-18 10:52:29,902:INFO:base.py:BEGIN (implicit)
+2024-12-18 10:52:29,905:INFO:base.py:SELECT compare_table.id AS compare_table_id, compare_table.`tb_Origin` AS `compare_table_tb_Origin`, compare_table.`tb_Cover` AS `compare_table_tb_Cover`, compare_table.`col_Origin` AS `compare_table_col_Origin`, compare_table.`col_Cover` AS `compare_table_col_Cover` 
+FROM compare_table 
+ LIMIT %(param_1)s
+2024-12-18 10:52:29,906:INFO:base.py:[generated in 0.00122s] {'param_1': 1}
+2024-12-18 10:52:29,909:INFO:_internal.py:127.0.0.1 - - [18/Dec/2024 10:52:29] "GET / HTTP/1.1" 200 -
+2024-12-18 10:53:19,631:INFO:_internal.py:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-18 10:53:19,632:INFO:_internal.py:[33mPress CTRL+C to quit[0m
+2024-12-18 10:53:21,785:INFO:_internal.py:127.0.0.1 - - [18/Dec/2024 10:53:21] "GET / HTTP/1.1" 200 -
+2024-12-18 10:55:10,894:INFO:base.py:SELECT DATABASE()
+2024-12-18 10:55:10,895:INFO:base.py:[raw sql] {}
+2024-12-18 10:55:10,896:INFO:base.py:SELECT @@sql_mode
+2024-12-18 10:55:10,896:INFO:base.py:[raw sql] {}
+2024-12-18 10:55:10,896:INFO:base.py:SELECT @@lower_case_table_names
+2024-12-18 10:55:10,897:INFO:base.py:[raw sql] {}
+2024-12-18 10:55:10,902:INFO:base.py:BEGIN (implicit)
+2024-12-18 10:55:10,903:INFO:base.py:SHOW CREATE TABLE `compare_table`
+2024-12-18 10:55:10,903:INFO:base.py:[raw sql] {}
+2024-12-18 10:55:10,905:INFO:base.py:ROLLBACK
+2024-12-18 10:55:10,912:INFO:_internal.py:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-18 10:55:10,912:INFO:_internal.py:[33mPress CTRL+C to quit[0m
+2024-12-18 10:55:13,175:INFO:base.py:BEGIN (implicit)
+2024-12-18 10:55:13,177:INFO:base.py:SELECT compare_table.id AS compare_table_id, compare_table.`tb_Origin` AS `compare_table_tb_Origin`, compare_table.`tb_Cover` AS `compare_table_tb_Cover`, compare_table.`col_Origin` AS `compare_table_col_Origin`, compare_table.`col_Cover` AS `compare_table_col_Cover` 
+FROM compare_table 
+ LIMIT %(param_1)s
+2024-12-18 10:55:13,178:INFO:base.py:[generated in 0.00078s] {'param_1': 1}
+2024-12-18 10:55:13,179:INFO:_internal.py:127.0.0.1 - - [18/Dec/2024 10:55:13] "GET / HTTP/1.1" 200 -
+2024-12-18 10:58:48,887:INFO:base.py:SELECT DATABASE()
+2024-12-18 10:58:48,887:INFO:base.py:[raw sql] {}
+2024-12-18 10:58:48,888:INFO:base.py:SELECT @@sql_mode
+2024-12-18 10:58:48,888:INFO:base.py:[raw sql] {}
+2024-12-18 10:58:48,888:INFO:base.py:SELECT @@lower_case_table_names
+2024-12-18 10:58:48,889:INFO:base.py:[raw sql] {}
+2024-12-18 10:58:48,894:INFO:base.py:BEGIN (implicit)
+2024-12-18 10:58:48,894:INFO:base.py:SHOW CREATE TABLE `compare_table`
+2024-12-18 10:58:48,895:INFO:base.py:[raw sql] {}
+2024-12-18 10:58:48,897:INFO:base.py:ROLLBACK
+2024-12-18 10:58:48,899:INFO:main.py:日誌
+2024-12-18 10:58:48,905:INFO:_internal.py:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-18 10:58:48,906:INFO:_internal.py:[33mPress CTRL+C to quit[0m
+2024-12-18 10:58:51,547:INFO:base.py:BEGIN (implicit)
+2024-12-18 10:58:51,551:INFO:base.py:SELECT compare_table.id AS compare_table_id, compare_table.`tb_Origin` AS `compare_table_tb_Origin`, compare_table.`tb_Cover` AS `compare_table_tb_Cover`, compare_table.`col_Origin` AS `compare_table_col_Origin`, compare_table.`col_Cover` AS `compare_table_col_Cover` 
+FROM compare_table 
+ LIMIT %(param_1)s
+2024-12-18 10:58:51,552:INFO:base.py:[generated in 0.00101s] {'param_1': 1}
+2024-12-18 10:58:51,553:INFO:_internal.py:127.0.0.1 - - [18/Dec/2024 10:58:51] "GET / HTTP/1.1" 200 -
+2024-12-18 11:00:18,474:INFO:base.py:1899:SELECT DATABASE()
+2024-12-18 11:00:18,475:INFO:base.py:1904:[raw sql] {}
+2024-12-18 11:00:18,475:INFO:base.py:1899:SELECT @@sql_mode
+2024-12-18 11:00:18,475:INFO:base.py:1904:[raw sql] {}
+2024-12-18 11:00:18,476:INFO:base.py:1899:SELECT @@lower_case_table_names
+2024-12-18 11:00:18,476:INFO:base.py:1904:[raw sql] {}
+2024-12-18 11:00:18,481:INFO:base.py:1099:BEGIN (implicit)
+2024-12-18 11:00:18,482:INFO:base.py:1899:SHOW CREATE TABLE `compare_table`
+2024-12-18 11:00:18,482:INFO:base.py:1904:[raw sql] {}
+2024-12-18 11:00:18,484:INFO:base.py:1125:ROLLBACK
+2024-12-18 11:00:18,485:INFO:main.py:7:日誌
+2024-12-18 11:00:18,493:INFO:_internal.py:97:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-18 11:00:18,493:INFO:_internal.py:97:[33mPress CTRL+C to quit[0m
+2024-12-18 11:03:02,654:INFO:base.py:1899:SELECT DATABASE()
+2024-12-18 11:03:02,655:INFO:base.py:1904:[raw sql] {}
+2024-12-18 11:03:02,656:INFO:base.py:1899:SELECT @@sql_mode
+2024-12-18 11:03:02,656:INFO:base.py:1904:[raw sql] {}
+2024-12-18 11:03:02,656:INFO:base.py:1899:SELECT @@lower_case_table_names
+2024-12-18 11:03:02,657:INFO:base.py:1904:[raw sql] {}
+2024-12-18 11:03:02,663:INFO:base.py:1099:BEGIN (implicit)
+2024-12-18 11:03:02,663:INFO:base.py:1899:SHOW CREATE TABLE `compare_table`
+2024-12-18 11:03:02,663:INFO:base.py:1904:[raw sql] {}
+2024-12-18 11:03:02,665:INFO:base.py:1125:ROLLBACK
+2024-12-18 11:03:02,667:INFO:main.py:7:info日誌
+2024-12-18 11:03:02,667:DEBUG:main.py:8:debug日誌
+2024-12-18 11:03:02,672:INFO:_internal.py:97:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-18 11:03:02,673:INFO:_internal.py:97:[33mPress CTRL+C to quit[0m
+2024-12-18 11:03:25,868:INFO:main.py:7:info日誌
+2024-12-18 11:03:25,872:INFO:_internal.py:97:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-18 11:03:25,872:INFO:_internal.py:97:[33mPress CTRL+C to quit[0m
+2024-12-18 16:35:05,682:INFO:main.py:7:info日誌
+2024-12-18 16:35:05,685:INFO:_internal.py:97:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-18 16:35:05,685:INFO:_internal.py:97:[33mPress CTRL+C to quit[0m
+2024-12-18 16:35:07,598:INFO:_internal.py:97:127.0.0.1 - - [18/Dec/2024 16:35:07] "GET / HTTP/1.1" 200 -
+2024-12-18 16:35:23,347:INFO:_internal.py:97:127.0.0.1 - - [18/Dec/2024 16:35:23] "GET / HTTP/1.1" 200 -
+2024-12-18 16:36:08,692:INFO:main.py:7:info日誌
+2024-12-18 16:36:08,702:INFO:_internal.py:97:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-18 16:36:08,702:INFO:_internal.py:97:[33mPress CTRL+C to quit[0m
+2024-12-18 16:36:10,347:INFO:_internal.py:97:127.0.0.1 - - [18/Dec/2024 16:36:10] "GET / HTTP/1.1" 200 -

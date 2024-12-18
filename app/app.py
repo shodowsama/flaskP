@@ -1,6 +1,7 @@
 from flask import Flask
 
 
+
 def create_app():
     app = Flask(__name__,
                 template_folder='../template',
@@ -14,3 +15,6 @@ def create_app():
 def init_bp(app):
     from controller.user import user
     app.register_blueprint(user)
+
+    from controller.index import index
+    app.register_blueprint(index)
