@@ -1,5 +1,7 @@
 from flask import Flask
 
+import os
+
 
 
 def create_app():
@@ -9,6 +11,7 @@ def create_app():
                 static_folder='../static')
     
     init_bp(app)
+    app.config['SECRET_KEY'] = os.urandom(24)
 
     return app
 
