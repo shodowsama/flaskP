@@ -21,3 +21,6 @@ def init_bp(app):
 
     from controller.index import index
     app.register_blueprint(index)
+
+    from controller.article import article
+    app.register_blueprint(article)

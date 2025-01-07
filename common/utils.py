@@ -1,6 +1,7 @@
 import random
 import string
 
+from datetime import datetime
 from PIL import Image,ImageFont,ImageDraw
 from io import BytesIO
 
@@ -55,3 +56,12 @@ class ImageCode():
 
 Image_Code = ImageCode()
 Image_Code.draw_verify_code()
+
+def model_to_json(result):
+    dict = {}
+    for k,v in result.__dict__.items():
+        if not k.startswith('_sa_'):
+            if isinstance(v,datetime):
+                v = v.strftime('%Y-%m-%d %H:%M:%S')
+            dict[k] = v
+    return dict

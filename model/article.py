@@ -51,3 +51,13 @@ class Article(Base):
                 Article.browse_num.desc()
                 ).limit(count).all()
         return result
+    
+    def get_article_detail(self,article_id):
+        return dbsession.query(Article).filter_by(id = article_id).first()
+    
+    def find_about_article(self,label_name):
+        return dbsession.query(Article).filter_by(
+            label_name=label_name
+        ).order_by(
+            Article.browse_num.desc()
+        ).limit(5)
