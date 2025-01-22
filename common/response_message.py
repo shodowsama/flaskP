@@ -18,6 +18,10 @@ class ArticleMessage():
         return {'status':2000,'data':data}
     
     @staticmethod
+    def drafted_success(data,article_id):
+        return {'status':2003,'article_id':article_id,'data':data}
+    
+    @staticmethod
     def error(data):
         return {'status':2002,'data':data}
     

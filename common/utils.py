@@ -65,3 +65,15 @@ def model_to_json(result):
                 v = v.strftime('%Y-%m-%d %H:%M:%S')
             dict[k] = v
     return dict
+
+def compress_image(source,dest,width=1200):
+    im = Image.open(source)
+    x,y = im.size
+    if x>width:
+        ys = int(y*width/x)
+        xs = width
+        temp = im.resize((xs,ys),Image.ANTIALIAS)
+        temp.save(dest,quality=80)
+    else:
+        im.save(dest,quality=80)
+    

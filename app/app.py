@@ -24,3 +24,6 @@ def init_bp(app):
 
     from controller.article import article
     app.register_blueprint(article)
+
+    from controller.feedback import feedback
+    app.register_blueprint(feedback)

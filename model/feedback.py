@@ -1,5 +1,5 @@
 from sqlalchemy import Table
-from sqlalchemy import or_
+from sqlalchemy import or_,func
 
 from common.database import db_connect
 from common.utils import model_to_json
@@ -12,9 +12,6 @@ dbsession,Base,engin = db_connect()
 
 class Feedback(Base):
     __table__ = Table('comment', Base.metadata, autoload_with=engin)
-
-
-
 
     def get_fedback_user_list(self,article_id):
         final_data_list = []
@@ -68,4 +65,46 @@ class Feedback(Base):
         ).order_by(
             Feedback.id.desc()
         ).all()
-        return result           
+        return result       
+
+    def get_article_feedback_count(self,article_id):
+        result = dbsession.query(Feedback).filter_by(
+            article_id = article_id,
+            reply_id = 0,
+            base_reply_id = 0
+        ).count()
+        return result
+    
+    def insert_comment(self,user_id,article_id,content,ipaddr):
+        feedback_max_floor = dbsession.query(
+            func.max(Feedback.floor_number).label('max_floor')
+            ).filter_by(article_id=article_id).first()
+        if feedback_max_floor.max_floor == 0 or feedback_max_floor.max_floor is None:
+            feedback = Feedback(user_id=user_id,
+                                article_id=article_id,
+                                content = content,
+                                ipaddr = ipaddr,
+                                floor_number=1,
+                                reply_id=0,
+                                base_reply_id =0)
+        else:
+            feedback = Feedback(user_id=user_id,
+                                article_id=article_id,
+                                content = content,
+                                ipaddr = ipaddr,
+                                floor_number=int(feedback_max_floor) + 1,
+                                reply_id=0,
+                                base_reply_id =0)     
+        dbsession.add(feedback)
+        dbsession.commit()   
+        return feedback
+    
+    def insert_reply(self,article_id,user_id,content,ipaddr,reply_id,base_reply_id):
+        feedback = Feedback(user_id=user_id,
+                    article_id=article_id,
+                    content = content,
+                    ipaddr = ipaddr,
+                    reply_id=reply_id,
+                    base_reply_id =base_reply_id)     
+        dbsession.add(feedback)
+        dbsession.commit() 

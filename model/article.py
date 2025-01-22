@@ -61,3 +61,47 @@ class Article(Base):
         ).order_by(
             Article.browse_num.desc()
         ).limit(5)
+    
+    def insert_article(self,user_id,title,article_content,drafted):
+        article = Article(user_id = user_id,
+                          title=title,
+                          article_content=article_content,
+                          drafted=drafted)
+        dbsession.add(article)
+        dbsession.commit()
+        return article.id
+    
+    def update_article(self,article_id,title,
+                       article_content,drafted,
+                       label_name='',article_tag='',
+                       article_type=''):
+        row = dbsession.query(Article).filter_by(id=article_id).first()
+        row.title = title
+        row.article_content = article_content
+        row.drafted = drafted
+        row.label_name = label_name
+        row.article_tag = article_tag
+        row.article_type = article_type
+
+        dbsession.commit()
+        return article_id
+
+    def update_article_header_image(self,article_id,article_image):
+        row = dbsession.query(Article).filter_by(id=article_id).first()
+        row.article_image = article_image
+        dbsession.commit()
+        return article_id
+
+
+    def get_all_article_drafted(self,user_id):
+        result = dbsession.query(Article).filter_by(user_id = user_id,
+                                                    drafted=0).all()
+        return result
+    
+    def get_one_article_drafted(self,article_id):
+        result = dbsession.query(Article).filter_by(
+            id = article_id,
+            drafted = 0
+        ).first()
+        return result
+
