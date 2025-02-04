@@ -1,11 +1,13 @@
 from sqlalchemy import Table
-from sqlalchemy import or_
+from sqlalchemy import or_,distinct
 
 from common.database import db_connect
 from app.config.config import config
 from app.settings import env
 
 from model.user import User
+from model.favorite import Favorite
+from model.feedback import Feedback
 
 
 dbsession,Base,engin = db_connect()
@@ -104,4 +106,36 @@ class Article(Base):
             drafted = 0
         ).first()
         return result
+    
+    def get_article_by_userid(self,user_id):
+        result = dbsession.query(Article).filter_by(user_id = user_id,
+                                                    drafted=1).all()
+        return self.app_path(result)
+    
+
+    def get_favorite_by_userid(self,user_id):
+        result = dbsession.query(Article).join(
+            Favorite,
+            Favorite.article_id == Article.id
+        ).filter(
+            Favorite.user_id == user_id,
+        ).order_by(
+            Favorite.create_time.desc()
+        ).all()
+        return self.app_path(result)
+    
+    def get_feedback_by_userid(self,user_id):
+        article_id_list = dbsession.query(
+            distinct(Feedback.article_id)
+            ).filter_by(user_id=user_id).subquery()
+        
+        result = dbsession.query(Article).filter(Article.id.in_(article_id_list)).all()
+        return self.app_path(result)
+
+
+        
+    def app_path(self,article_list):
+        for article in article_list:
+            article.article_image = config[env].article_header_image_path + article.article_image
+        return article_list
 

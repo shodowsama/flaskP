@@ -9,6 +9,13 @@ class Config(object):
 
     user_header_image_path = '/images/headers/'
 
+    REDIS_HOST = '192.168.1.129'
+    REDIS_PORT = 6379
+    REDIS_PASSWORD = ''
+    REDIS_POLL = 10
+    REDIS_DB = 2
+    REDIS_DECODE_RESPONSE = True
+
 
 # 測試
 class TestC(Config):
